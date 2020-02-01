@@ -5,7 +5,7 @@ import {FormGroup,FormControl, Button} from 'react-bootstrap';
 
 
 export default class GenerateReport extends Component {
-	state = {title:'',departments:'',medications:'',prescriptions:'',description : '',publicKey : '', privateKey : '',receiver : '',showScanner : false}
+	state = {title:'',departments:'',medications:'',prescriptions:'',description : '',publicKey : '', privateKey : '',receiver : '',showScanner : false, loading:true}
 	constructor(props){
 		super(props);
 		}
@@ -40,14 +40,14 @@ export default class GenerateReport extends Component {
 				})
 			})
 			.then(res=>res.json())
-			.then(json=> console.log(json))
+			.then(json=> this.setState({loading : false}));
 	}
 	toggleQrScan = ()=> {
 		this.setState({showScanner : !this.state.showScanner});
 		}
     handleScan = data => {
 		if (data) {
-		  this.setState({receiver: data});
+		  this.setState({receiver: data, showScanner : false});
 		}
     }
 	handleError = err => {
@@ -132,7 +132,7 @@ export default class GenerateReport extends Component {
 					/>
 				</FormGroup>
 				<Button bsStyle="danger" className="mr-2" onClick={this.toggleQrScan}> {this.state.showScanner ? 'Cancel' : 'Scan QR'}</Button>
-				<Button bsStyle="danger" onClick={this.onFormSubmit} > Submit </Button>	
+				<Button bsStyle="danger" onClick={this.onFormSubmit} > {this.state.loading ? 'Submit' : 'Shared'} </Button>	
             </FormGroup>
 	
 	

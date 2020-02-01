@@ -4,6 +4,7 @@ import {Button} from 'react-bootstrap';
 import GenerateDepartment from './GenerateDepartment';
 import GeneratePatient from './GeneratePatient';
 
+import {Link} from 'react-router-dom';
 export default class SignUp extends Component {
 	state = {kind : '',msg:'Select Your Credential'}
 	constructor(props){
@@ -26,6 +27,10 @@ export default class SignUp extends Component {
 		 </div>)
         }
         {kind !== '' ? <Button bsStyle="danger" onClick={()=>this.onKindChange('')}> Cancel </Button> : <div></div>}
+		<div>
+			<p className="mt-2">Already a User ? </p>
+			<Link className="btn btn-danger mt-2" to='/login' style={{textDecoration:'none'}}>Login</Link>
+		</div>
         </div>
         );
     }

@@ -197,3 +197,8 @@ a, a:hover {
 .mr-2 {
   margin-right : 2rem!important;
 }
+
+.card-rectify {
+  background-color : azure!important;
+  border-radius : 30px;
+}

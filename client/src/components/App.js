@@ -106,10 +106,10 @@ class App extends Component {
             framed
           />) : (<img className='logo' src={logo}></img>)}
 		</div>
-        {kind === 'admin' ? (<div></div>) : (<Bio bio={this.state.bio} name={this.state.name} kind={kind} />)}
+        {kind === 'admin' ? (<div></div>) : (<Bio  bio={this.state.bio} name={this.state.name} kind={kind} />)}
         <br />
         {
-        (kind === 'admin') ? (<Tabs defaultActivateKey = "departments" transition={true} className="card-maker Block black tabs-sanitize">
+        (kind === 'admin') ? (<Tabs defaultActivateKey = "departments" transition={true} className="card-maker card-rectify Block black tabs-sanitize">
 			<Tab eventKey = "departments" title="Valid Departments" >
 				<div>
 					<Departments departments={this.state.validDepartments}/>
@@ -122,12 +122,12 @@ class App extends Component {
 			</Tab>
 			</Tabs>) : (
 			<div className='LedgerInfo'>
-				<div className="black card-maker">Address: {address}</div>
+				<div className="black card-maker card-rectify">Address: {address}</div>
 				<Button bsStyle="danger mb-2 mt-2" onClick={this.toggleQR} >{this.state.showQR ? 'Hide QR' : 'Show QR'}</Button>
 			</div>)
 		}
         {
-			(address && kind === 'patient') ? (<Tabs defaultActivateKey = "reports" transition={true}  className="card-maker Block black tabs-sanitize">
+			(address && kind === 'patient') ? (<Tabs defaultActivateKey = "reports" transition={true}  className="card-maker card-rectify Block black tabs-sanitize">
 				<Tab eventKey = "reports" title="Reports" >
 				<div>
 					<Reports reports={this.state.reports} onShare={this.onShare.bind(this)}/>
@@ -146,7 +146,7 @@ class App extends Component {
 			</Tabs>) : (<div></div>)
 		}
         {
-			(address && kind === "department") ? (<Tabs defaultActivateKey = "patientReports" transition={true}  className="card-maker Block black tabs-sanitize">
+			(address && kind === "department") ? (<Tabs defaultActivateKey = "patientReports" transition={true}  className="card-maker card-rectify Block black tabs-sanitize">
 				<Tab eventKey = "patientReports" title="Patient Reports" >
 					<div className="cover">
 						<PatientReports patientReports={this.state.patientReports} />

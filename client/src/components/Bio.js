@@ -25,7 +25,6 @@ export default class Bio extends Component {
 								<div>
 									<div className="card">
 										<div className="card-body">
-											  <div className="card-title black">BIO</div>
 											  <div className="card-text">
 												  <ListGroup className="list-show">
 													<ListGroupItem>Name : {name} </ListGroupItem>
@@ -44,7 +43,6 @@ export default class Bio extends Component {
 								<div className="bio">
 									<div className="card">
 										<div className="card-body">
-											  <div className="card-title black">Info</div>
 											  <div className="card-text">
 												  <ListGroup className="list-show">
 													<ListGroupItem>Department Name : {name} </ListGroupItem>
