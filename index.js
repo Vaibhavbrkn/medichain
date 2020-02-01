@@ -4,6 +4,7 @@ const express = require('express');
 const request = require('request');
 const path = require('path');
 const Blockchain = require('./blockchain');
+var cors = require('cors')
 const PubSub = require('./app/pubsub');
 const TransactionPool = require('./ledger/transaction-pool');
 const Ledger = require('./ledger');
@@ -38,6 +39,7 @@ const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
 
 const app = express();
+app.use(cors())
 const blockchain = new Blockchain();
 const transactionPool = new TransactionPool();
 const pubsub = new PubSub({

@@ -12,7 +12,7 @@
     "start-redis": "redis-server --daemonize yes",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
     "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
-    "dev-client-windows": "parcel client/src/index.html --out-dir client/dist",
+    "dev-client-windows" : "parcel client/src/index.html --out-dir client/dist",
     "clean": "rm -rf .cache client/dist"
   },
   "jest": {
@@ -45,12 +45,12 @@
     "mongoose": "^5.8.9",
     "parcel-bundler": "^1.12.4",
     "pubnub": "^4.21.6",
+    "cors":"^2.8.5",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.6.0",
     "react-google-qrcode": "^1.0.3",
-    "react-modal": "^3.11.1",
     "react-qr-reader": "^2.2.1",
     "react-router-dom": "^4.3.1",
     "react-spinners": "^0.8.0",
