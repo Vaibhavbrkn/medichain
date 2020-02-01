@@ -33,7 +33,7 @@ mongoose.set('useFindAndModify', false);
 
 const isDevelopment = process.env.ENV === 'development';
 
-const REDIS_URL = 'redis://127.0.0.1:6379';
+const REDIS_URL = process.env.ENV === 'development' ? 'redis://127.0.0.1:6379' : 'redis://h:pb8403dc91690a7f750c3a6244d8a09c0374172a29850214299f7c9ab72d8bb4b@ec2-3-210-246-86.compute-1.amazonaws.com:15789';
 const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
 
