@@ -109,7 +109,7 @@ class App extends Component {
         {kind === 'admin' ? (<div></div>) : (<Bio bio={this.state.bio} name={this.state.name} kind={kind} />)}
         <br />
         {
-        (kind === 'admin') ? (<Tabs defaultActivateKey = "departments" transition={false}>
+        (kind === 'admin') ? (<Tabs defaultActivateKey = "departments" transition={true} className="card-maker Block black tabs-sanitize">
 			<Tab eventKey = "departments" title="Valid Departments" >
 				<div>
 					<Departments departments={this.state.validDepartments}/>
@@ -127,7 +127,7 @@ class App extends Component {
 			</div>)
 		}
         {
-			(address && kind === 'patient') ? (<Tabs defaultActivateKey = "reports" transition={false}>
+			(address && kind === 'patient') ? (<Tabs defaultActivateKey = "reports" transition={true}  className="card-maker Block black tabs-sanitize">
 				<Tab eventKey = "reports" title="Reports" >
 				<div>
 					<Reports reports={this.state.reports} onShare={this.onShare.bind(this)}/>
@@ -146,7 +146,7 @@ class App extends Component {
 			</Tabs>) : (<div></div>)
 		}
         {
-			(address && kind === "department") ? (<Tabs defaultActivateKey = "patientReports" transition={false}>
+			(address && kind === "department") ? (<Tabs defaultActivateKey = "patientReports" transition={true}  className="card-maker Block black tabs-sanitize">
 				<Tab eventKey = "patientReports" title="Patient Reports" >
 					<div className="cover">
 						<PatientReports patientReports={this.state.patientReports} />

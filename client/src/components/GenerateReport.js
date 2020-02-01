@@ -113,12 +113,14 @@ export default class GenerateReport extends Component {
 				</FormGroup>
 				{
 				this.state.showScanner ? (
-				 <QrReader
-					  delay={300}
-					  onError={this.handleError}
-					  onScan={this.handleScan}
-					  style={{ width: '100%' }}
-				/>
+				 <div className="make-modal">
+					<QrReader
+						delay={300}
+						onError={this.handleError}
+						onScan={this.handleScan}
+						style={{ width: '100%' }}
+					/>
+				</div>
 				) : (<div></div>)
 				}
 				<FormGroup>
@@ -129,7 +131,7 @@ export default class GenerateReport extends Component {
 						onChange = {this.onReceiverChange}
 					/>
 				</FormGroup>
-				<Button bsStyle="danger" onClick={this.toggleQrScan}> {this.state.showScanner ? 'Cancel' : 'Scan QR'}</Button>
+				<Button bsStyle="danger" className="mr-2" onClick={this.toggleQrScan}> {this.state.showScanner ? 'Cancel' : 'Scan QR'}</Button>
 				<Button bsStyle="danger" onClick={this.onFormSubmit} > Submit </Button>	
             </FormGroup>
 	

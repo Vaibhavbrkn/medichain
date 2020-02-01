@@ -1,5 +1,5 @@
 body {
-  background : url('./assets/front.png') no-repeat;
+  background : url('/front.52d01e66.png') no-repeat;
   background-color : #66b3ff;
   background-size : cover;
   color: #fff;
@@ -197,3 +197,5 @@ a, a:hover {
 .mr-2 {
   margin-right : 2rem!important;
 }
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -338,6 +338,7 @@ app.post('/api/validate', (req, res) => {
                     },
                     by: 'department'
                 });
+                res.status(200).send({message : 'success'});
             }
         });
     } else {
